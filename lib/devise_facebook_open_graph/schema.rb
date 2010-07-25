@@ -3,7 +3,7 @@
 module DeviseFacebookOpenGraph
   module Schema
     def facebook_open_graph_authenticatable
-      apply_schema ::Devise.facebook_uid_field, :integer, :limit => 8
+      apply_devise_schema ::Devise.facebook_uid_field, :integer, :limit => 8
     end
   end
 end
