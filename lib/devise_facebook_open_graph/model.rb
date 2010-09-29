@@ -10,6 +10,12 @@ module Devise
         attr_accessor :facebook_session
         define_model_callbacks :create_by_facebook
         define_model_callbacks :connecting_to_facebook
+
+        if included_modules.include? Devise::Models::Timeoutable
+          def timedout?(last_access)
+            authenticated_via_facebook? ? false : super
+          end
+        end
       end
 
       module ClassMethods
