@@ -37,6 +37,13 @@ module DeviseFacebookOpenGraph
         Koala::Facebook::GraphAPI.new(access_token)
       end
 
+      #
+      # Gives access to query as user with old rest API
+      #
+      def rest_api
+        Koala::Facebook::RestAPI.new(access_token)
+      end
+
 
       #
       # Define reader methods for facebook session keys
