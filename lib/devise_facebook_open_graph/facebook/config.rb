@@ -23,7 +23,7 @@ module DeviseFacebookOpenGraph
         %w(application_id api_key application_secret).each do |config_key|
           define_method config_key do
             instance_variable_get('@'+config_key) or 
-            instance_variable_set('@'+config_key, config[config_key].value)
+            instance_variable_set('@'+config_key, config[config_key])
           end
         end
         
