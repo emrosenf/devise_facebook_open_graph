@@ -42,7 +42,7 @@ module DeviseFacebookOpenGraph
 
           def config
             f = File.read(config_file_path)
-            @config ||= YAML.load(f)[Rails.env].symbolize_keys!
+            @config ||= YAML.load(f)[::Rails.env].symbolize_keys!
           end
       end
     end
